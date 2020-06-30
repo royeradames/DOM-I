@@ -74,3 +74,22 @@ mainTextH4.forEach((item, index) => item.textContent = siteContent['main-content
   const mainTextP = document.querySelectorAll('.text-content p');
 const appendixForPContent = '-content';
   mainTextP.forEach((item, index) => item.textContent = siteContent['main-content'][`${mainContentNames[index]}${appendixForPContent}`])
+
+//populate contact
+const contactKeys = ['address', 'phone', 'email'];
+
+const contactH4 = document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4'];
+
+const contactData = siteContent['contact'];
+
+  //add text to the contant fields
+const contact = document.querySelectorAll('.contact p');
+console.log(contact)
+contact.forEach(
+  function(item,index){ 
+    console.log(item);
+    item.textContent = contactData[contactKeys[index] ]
+  });
+
+//add text to footer p
+const footerP = document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
