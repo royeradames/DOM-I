@@ -54,3 +54,23 @@ const headerNav = document.querySelectorAll('header nav a');
 headerNav.forEach((item, index) => item.textContent = siteContent['nav'][`nav-item-${index + 1}`]);
 
 // add cta text
+const ctaH1 = document.querySelector('.cta-text h1').textContent = 'DOM IS AWESOME';
+const ctabtn = document.querySelector('.cta-text button').textContent = 'Get Started';
+
+// add main text
+const mainTextH4 = document.querySelectorAll('.text-content h4');
+console.log(mainTextH4)
+const mainContentNames = ['features', 'about', 'services', 'product', 'vision'];
+  //add text to h2 container text class 
+mainTextH4.forEach((item, index) => item.textContent = siteContent['main-content'][`${mainContentNames[index]}-h4`])
+// mainTextH4[0].textContent = siteContent['main-content']['features-h4'];
+// mainTextH4[1].textContent = siteContent['main-content']['about-h4'];
+// mainTextH4[2].textContent = siteContent['main-content']['services-h4'];
+// mainTextH4[3].textContent = siteContent['main-content']['product-h4'];
+// mainTextH4[4].textContent = siteContent['main-content']['vision-h4'];
+
+
+  //add text to p container text class 
+  const mainTextP = document.querySelectorAll('.text-content p');
+const appendixForPContent = '-content';
+  mainTextP.forEach((item, index) => item.textContent = siteContent['main-content'][`${mainContentNames[index]}${appendixForPContent}`])
