@@ -9,10 +9,10 @@
 
 let rootCount = 0;
 let count100ms = 0;
-let countOne = 0; 
+let countOne = 9; 
 const runScriptEvery10Seconds = 10;
 
-setInterval( () =>{
+const intervalID = setInterval( () =>{
     
     rootCount+= 10;
 
@@ -32,14 +32,11 @@ setInterval( () =>{
         countOne++;
         secondOnes(countOne)
     } 
-
     //seconds
-    if(countOne < 10){
-        
-    }else{
+    if(countOne >= 10){
         //stop counting
         //change digits color to red
-        clearInterval();
+        clearInterval(intervalID);
         secondTens();
     }
 }, runScriptEvery10Seconds);
@@ -51,50 +48,25 @@ function ms10(currentTime){
 }
 
 function ms100(currentTime){
+    //add 0 when there is only 1 digit
+    if(currentTime < 10){
+        currentTime = `0${currentTime}`
+    }
     const msHundreds = document.querySelector('#msHundreds');
     msHundreds.textContent = `${currentTime}.`;
 }
 
 function secondOnes(currentTime){
-    //add 0 when there is only 1 digit
-    
-    
     const msHundreds = document.querySelector('#secondOnes');
     msHundreds.textContent = `${currentTime}`;
 }
 function secondTens(){
+    const msTens = document.querySelector('#msTens');
+    msTens.textContent = `0`;
     const msHundreds = document.querySelector('#msHundreds');
-    msHundreds.textContent = `0`;
+    msHundreds.textContent = `0.`;
     const secondTens = document.querySelector('#secondTens');
     secondTens.textContent = `1`;
     const digits =document.querySelector('.digits');
     digits.style.color = `red`;
 }
-
-// //counter promise
-// const counter = () =>{
-//     //count in sets of 10ms and store it in counting Number
-//     return new Promise((resolve, reject) =>{
-//         resolve(rootCount());
-//     })
-// }
-
-// counter()
-// .then((currentTime) => {
-//     //add components here
-//     console.log(currentTime)
-    
-// })
-
-
-
-// //components
-// function clock(currentTimeInMS){
-
-// }
-
-// function rootCount (){
-//     window.setInterval(() => {
-//         countingNum += 10;
-//       }, 10)
-// }
