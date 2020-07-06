@@ -54,12 +54,12 @@ const headerNav = document.querySelectorAll('header nav a');
 headerNav.forEach((item, index) => item.textContent = siteContent['nav'][`nav-item-${index + 1}`]);
 
 // add cta text
-const ctaH1 = document.querySelector('.cta-text h1').textContent = 'DOM IS AWESOME';
+const ctaH1 = document.querySelector('.cta-text h1')
+ctaH1.textContent = 'DOM IS AWESOME';
 const ctabtn = document.querySelector('.cta-text button').textContent = 'Get Started';
 
 // add main text
 const mainTextH4 = document.querySelectorAll('.text-content h4');
-console.log(mainTextH4)
 const mainContentNames = ['features', 'about', 'services', 'product', 'vision'];
   //add text to h2 container text class 
 mainTextH4.forEach((item, index) => item.textContent = siteContent['main-content'][`${mainContentNames[index]}-h4`])
@@ -93,3 +93,13 @@ contact.forEach(
 
 //add text to footer p
 const footerP = document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
+
+//stretches
+//adding blue text and border to h1 heading
+ctaH1.style.color = '#1F85DE'
+ctaH1.style.border = '.1rem solid #1F85DE'
+ctaH1.style.padding = '2rem'
+
+
+
