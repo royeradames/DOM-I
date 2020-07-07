@@ -54,9 +54,10 @@ const headerNav = document.querySelectorAll('header nav a');
 headerNav.forEach((item, index) => item.textContent = siteContent['nav'][`nav-item-${index + 1}`]);
 
 // add cta text
-const ctaH1 = document.querySelector('.cta-text h1')
+const ctaH1 = document.querySelector('.cta-text h1');
 ctaH1.textContent = 'DOM IS AWESOME';
-const ctabtn = document.querySelector('.cta-text button').textContent = 'Get Started';
+const ctabtn = document.querySelector('.cta-text button');
+ctabtn.textContent = 'Get Started';
 
 // add main text
 const mainTextH4 = document.querySelectorAll('.text-content h4');
@@ -96,10 +97,18 @@ const footerP = document.querySelector('footer p').textContent = siteContent['fo
 
 
 //stretches
-//adding blue text and border to h1 heading
+//added blue text and border to h1 heading
 ctaH1.style.color = '#1F85DE'
 ctaH1.style.border = '.1rem solid #1F85DE'
 ctaH1.style.padding = '2rem'
+ctaH1.style.transition = `2sec`
 
-
+ctabtn.addEventListener('click', (btn) =>{
+  ctaH1.style.color = 'black'
+  ctaH1.style.border = '.1rem solid black'
+})
+ctabtn.addEventListener('dblclick', (btn) =>{
+  ctaH1.style.color = '#1F85DE'
+  ctaH1.style.border = '.1rem solid #1F85DE'
+})
 
