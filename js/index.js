@@ -101,8 +101,8 @@ const footerP = document.querySelector('footer p').textContent = siteContent['fo
 ctaH1.style.color = '#1F85DE'
 ctaH1.style.border = '.1rem solid #1F85DE'
 ctaH1.style.padding = '2rem'
-ctaH1.style.transition = `2sec`
-
+ctaH1.style.transition = `1.3s`
+console.log(ctaH1.style)
 ctabtn.addEventListener('click', (btn) =>{
   ctaH1.style.color = 'black'
   ctaH1.style.border = '.1rem solid black'
